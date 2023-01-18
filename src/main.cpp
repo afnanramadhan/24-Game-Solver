@@ -3,8 +3,33 @@
 #include <algorithm>
 #include <list>
 #include <vector>
+#include <fstream>
 
 using namespace std;
+
+void saveFile(string filename, string input[4], int bil[4], list<string> kartu){
+    // bil, sama kartu nanti dihapus diganti sama hasil
+    
+    // buat file
+    ofstream File("..//test//" + filename + ".txt");
+    // tulis input
+    for (int i = 0; i < 4; i++){
+        File << input[i] << " ";
+    }
+    File << endl;
+
+    // tulis jumlah hasil
+    int total = kartu.size();
+    File << total << " Solution Found" << endl;
+
+    // tulis hasil
+    for (int i=0; i<4; i++){
+        // nanti diganti sama hasil
+        File << bil[i] << endl;
+    }
+    File.close();
+}
+
 
 int main(){
     string input[4];
@@ -12,13 +37,15 @@ int main(){
     list<string> kartu = {"a","A","2","3","4","5","6","7","8","9","10","j","J","Q","q","k","K"};
     
 
-    for (int i = 0; i < 4; i++){
+    for (int i=0; i<4; i++){
+        // minta input sekalian validasi
         do{
             cin >> input[i];
         }while(find(kartu.begin(), kartu.end(), input[i]) == kartu.end());
     }
 
-    for (int i = 0; i < 4; i++){
+    for (int i=0; i<4; i++){
+        // konversi string ke integer
         if(input[i] == "10"){
             bil[i] = 10;
         }else if(input[i] == "k" || input[i] == "K"){
@@ -49,11 +76,27 @@ int main(){
     }
 
     cout << "----------------------"<< endl;
-    for (int i = 0; i < 4; i++){
+    for (int i=0; i<4; i++){
         cout << bil[i] << endl;
     }
 
 
+    cout << "----------------------"<< endl;
 
-    
+
+    // save file
+    cout << "Apakah ingin menyimpan solusi?? (y/n)" << endl;
+    char save;
+    cin >> save;
+
+    if(save == 'y'){
+        string filename;
+        cout << "Masukkan nama file: ";
+        cin >> filename;
+        saveFile(filename, input, bil, kartu);
+    }
+
+    cout << "----------------------"<< endl;
+    cout << "Program selesai" << endl;
+
 }

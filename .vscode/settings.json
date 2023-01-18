@@ -3,7 +3,8 @@
         "xutility": "cpp",
         "iostream": "cpp",
         "xstring": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "iosfwd": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
