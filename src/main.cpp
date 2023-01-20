@@ -53,7 +53,12 @@ int main(){
     cout << "Input sendiri?? (y/n)" << endl;
     char inputSendiri;
     cin >> inputSendiri;
-    if(inputSendiri == 'y'){
+    while(inputSendiri != 'y' && inputSendiri != 'Y' && inputSendiri != 'n' && inputSendiri != 'N'){
+        cout << "Masukan tidak sesuai" << endl;
+        cin >> inputSendiri;
+    }
+
+    if(inputSendiri == 'y' || inputSendiri == 'Y'){
         cout << "Masukkan 4 kartu: " << endl;
 
         for (int i=0; i<4; i++){
@@ -69,24 +74,26 @@ int main(){
         // konversi string ke integer
             if(input[i] == "a" || input[i] == "A"){
                 bil[i] = 1;
-            }else if(input[i] == "1" || input[i] == "2" || input[i] == "3" || input[i] == "4" || input[i] == "5" || input[i] == "6" || input[i] == "7" || input[i] == "8" || input[i] == "9" || input[i] == "10"){
-                bil[i] = stoi(input[i]);
             }else if(input[i] == "j" || input[i] == "J"){
                 bil[i] = 11;
             }else if(input[i] == "q" || input[i] == "Q"){
                 bil[i] = 12;
             }else if(input[i] == "k" || input[i] == "K"){
                 bil[i] = 13;
+            }else{
+                bil[i] = stoi(input[i]);
             }
+
+            // else if(input[i] == "1" || input[i] == "2" || input[i] == "3" || input[i] == "4" || input[i] == "5" || input[i] == "6" || input[i] == "7" || input[i] == "8" || input[i] == "9" || input[i] == "10"){
+            //     bil[i] = stoi(input[i]);
+            // }
         }
-    }else if (inputSendiri == 'n'){
+    }else{
         // generate random
         srand(time(0));
         for (int i=0; i<4; i++){
             bil[i] = 1 + (rand() % 13);
         }
-    }else{
-        "Input tidak sesuai";
     }
     
     for(int i=0; i<4; i++){
@@ -131,8 +138,12 @@ int main(){
     cout << "Apakah ingin menyimpan solusi?? (y/n)" << endl;
     char save;
     cin >> save;
+    while(save != 'y' && save != 'Y' && save != 'n' && save != 'N'){
+        cout << "Masukan tidak sesuai" << endl;
+        cin >> save;
+    }
 
-    if(save == 'y'){
+    if(save == 'y' || save == 'Y'){
         string filename;
         cout << "Masukkan nama file: ";
         cin >> filename;
