@@ -24,14 +24,20 @@ int main(){
     }
     cout << "\n---------------------------------------------"<< endl;
 
+
+    time_t start, end;
+    start = clock();
     hasil = solve24(hasil, opp, bil);
+    end = clock();
     
     for (list<string>::iterator i=hasil.begin(); i!=hasil.end();i++){
         cout << *i << endl;
     }
 
     cout << "\n"<< hasil.size() << " solution found!\n" << endl;
+    cout << "Waktu eksekusi: " << (end-start)/(double)(1e3) << " detik\n" << endl;
     cout << "---------------------------------------------"<< endl;
+
 
     tanyaSave(bil, hasil);
 
