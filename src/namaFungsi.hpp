@@ -11,6 +11,7 @@
 #include <time.h>
 #include <ctime>
 #include <chrono>
+#include <sys/time.h>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ void saveFile(string filename,float bil[], list<string> hasil);
 void tanyaSave(float bil[], list<string> hasil);
 vector<float> mintaInput(float bil[], list<string> kartu);
 void splashScreen();
+vector<string> floatToString(vector<float> bil);
 
 
 #endif

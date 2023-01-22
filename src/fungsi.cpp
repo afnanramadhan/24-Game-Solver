@@ -106,3 +106,21 @@ vector<float> mintaInput(float bil[], list<string> kartu){
 void splashScreen(){
     cout <<  " ___  _  _      _____          __  __ ______\n|__ \\| || |    / ____|   /\\   |  \\/  |  ____|\n   ) | || |_  | |  __   /  \\  | \\  / | |__\n  / /|__   _| | | |_ | / /\\ \\ | |\\/| |  __|\n / /_   | |   | |__| |/ ____ \\| |  | | |____\n|____|  |_|    \\_____/_/    \\_\\_|  |_|______|" << endl;                                             
 }
+
+vector<string> floatToString(vector<float> bil){
+    vector<string> bilangan;
+    for (int i=0; i<4; i++){
+        if(bil[i] == 1){
+            bilangan.push_back("A");
+        }else if(bil[i] == 11){
+            bilangan.push_back("J");
+        }else if(bil[i] == 12){
+            bilangan.push_back("Q");
+        }else if(bil[i] == 13){
+            bilangan.push_back("K");
+        }else{
+            bilangan.push_back(to_string((int)bil[i]));
+        }
+    }
+    return bilangan;
+}

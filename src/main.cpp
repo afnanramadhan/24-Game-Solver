@@ -5,6 +5,7 @@ int main(){
     float bil[4];
     vector<float> bilangan;
     list<string> hasil;
+    vector<string> inputan;
     list<string> kartu = {"a","A","2","3","4","5","6","7","8","9","10","j","J","q","Q","k","K"};
     string opp[64] = {"+++","++-","++*","++/","+-+","+--","+-*","+-/","+*+","+*-","+**","+*/","+/+","+/-","+/*","+//","-++","-+-","-+*","-+/","--+","---","--*","--/","-*+","-*-","-**","-*/","-/+","-/-","-/*","-//","*++","*+-","*+*","*+/","*-+","*--","*-*","*-/","**+","**-","***","**/","*/+","*/-","*/*","*//","/++","/+-","/+*","/+/","/-+","/--","/-*","/-/","/*+","/*-","/**","/*/","//+","//-","//*","///"};
     
@@ -13,16 +14,16 @@ int main(){
 
 
     bilangan = mintaInput(bil, kartu);
-
+    inputan = floatToString(bilangan);
     for (int i=0; i<4; i++){
         bil[i] = bilangan[i];
     }
 
     cout << "---------------------------------------------"<< endl;
     for (int i=0; i<4; i++){
-        cout << bil[i] << " ";
+        cout << inputan[i] << " ";
     }
-    cout << "\n---------------------------------------------"<< endl;
+    cout << "\n---------------------------------------------\n"<< endl;
 
 
     time_t start, end;
@@ -34,8 +35,8 @@ int main(){
         cout << *i << endl;
     }
 
-    cout << "\n"<< hasil.size() << " solution found!\n" << endl;
-    cout << "Waktu eksekusi: " << (end-start)/(double)(1e3) << " detik\n" << endl;
+    cout << "\n"<< hasil.size() << " solutions found!\n" << endl;
+    cout << "Waktu eksekusi: " << (end-start)/(double)(CLOCKS_PER_SEC) << " detik\n" << endl;
     cout << "---------------------------------------------"<< endl;
 
 
