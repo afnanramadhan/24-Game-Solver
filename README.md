@@ -21,8 +21,8 @@ mengubah 4 buah angka random sehingga mendapatkan hasil akhir sejumlah 24. Progr
 ## Cara Penggunaan
 Cara 1:
 1. Buka terminal
-2. Ketik 'g++ src//main.cpp -o bin//main'
-3. Ketik 'bin//main'
+2. Ketik `g++ src//main.cpp -o bin//main` pada terminal
+3. Ketik `bin//main` pada terminal
 
 Cara 2:
 1. Masuk ke Folder bin
@@ -35,7 +35,7 @@ Cara 3:
 
 
 ## Author
-Nama: Afnan Edsa Ramadhan
-NIM: 13521011
-Prodi/Jurusan: STEI/Teknik Informatika
-Profile Github: afnanramadhan
+* Nama: Afnan Edsa Ramadhan
+* NIM: 13521011
+* Prodi/Jurusan: STEI/Teknik Informatika
+* Profil Github: [afnanramadhan](https://github.com/afnanramadhan)
